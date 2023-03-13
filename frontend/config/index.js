@@ -29,19 +29,23 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/login': {
-        target: process.env.AUTH_API_ADDRESS || 'http://192.168.55.100:8081',
-        secure: false
+        target: process.env.AUTH_API_ADDRESS || 'https://rampup-as-auth-api.azurewebsites.net',
+        secure: false,
+        changeOrigin: true
+
       },
       '/todos': {
-        target: process.env.TODOS_API_ADDRESS || 'http://192.168.55.4:8082',
-        secure: false
+        target: process.env.TODOS_API_ADDRESS || 'https://rampup-as-todos-api.azurewebsites.net',
+        secure: false,
+        changeOrigin: true
       },
       '/zipkin': {
-        target: process.env.ZIPKIN_URL || 'http://192.168.55.8:9411/api/v2/spans',
+        target: process.env.ZIPKIN_URL || 'https://rampup-as-zipkin.azurewebsites.net/api/v2/spans',
         pathRewrite: {
           '^/zipkin': ''
         },
-        secure: false
+        secure: false,
+        changeOrigin: true
       },      
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

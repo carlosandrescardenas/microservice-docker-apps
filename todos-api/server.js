@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require("body-parser")
 const jwt = require('express-jwt')
 
-const ZIPKIN_URL = process.env.ZIPKIN_URL || 'http://192.168.55.8:9411/api/v2/spans';
+const ZIPKIN_URL = process.env.ZIPKIN_URL || 'https://rampup-as-zipkin.azurewebsites.net:9411/api/v2/spans';
 const {Tracer, 
   BatchRecorder,
   jsonEncoder: {JSON_V2}} = require('zipkin');

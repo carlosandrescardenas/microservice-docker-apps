@@ -4,10 +4,10 @@ EXPOSE 8082
 
 ENV TODO_API_PORT=8082
 ENV JWT_SECRET=PRFT
-ENV REDIS_HOST=192.168.55.5
+ENV REDIS_HOST=https://rampup-as-redis.azurewebsites.net
 ENV REDIS_PORT=6379
 ENV REDIS_CHANNEL=log_channel
-ENV ZIPKIN_URL=http://192.168.55.8:9411/api/v2/spans
+ENV ZIPKIN_URL=https://rampup-as-zipkin.azurewebsites.net/api/v2/spans
 
 WORKDIR /usr/src/app
 
